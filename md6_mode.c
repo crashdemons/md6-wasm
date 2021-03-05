@@ -270,8 +270,9 @@ static const md6_word Q[120] =
 
 /* routines for dealing with byte ordering */
 
-#if 0
-int md6_byte_order = 0;    
+#if 1
+int md6_detect_byte_order( void );
+int md6_byte_order = md6_detect_byte_order();    
 /* md6_byte_order describes the endianness of the 
 ** underlying machine:
 ** 0 = unknown
@@ -286,7 +287,7 @@ int md6_byte_order = 0;
 #define MD6_LITTLE_ENDIAN (md6_byte_order == 1)
 #define MD6_BIG_ENDIAN    (md6_byte_order == 2)
  
-void md6_detect_byte_order( void )
+int md6_detect_byte_order( void )
 /* determine if underlying machine is little-endian or big-endian
 ** set global variable md6_byte_order to reflect result
 ** Written to work for any w.
@@ -296,6 +297,7 @@ void md6_detect_byte_order( void )
   if ( *cp == 1 )        md6_byte_order = 1;      /* little-endian */
   else if ( *cp == 2 )   md6_byte_order = 2;      /* big-endian    */
   else                   md6_byte_order = 0;      /* unknown       */
+  return md6_byte_order;
 }
 #endif
 
