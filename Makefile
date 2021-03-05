@@ -7,6 +7,8 @@ CFLAGS=-I. -g -O0 -Wall
 #test: md6_mode.o
 #	$(CXX) $(CFLAGS) -o test md6_compress.o md6_mode.o main.cpp
 #
+test: main.cpp md6_easy.o
+	$(CXX) $(CFLAGS) -o test md6_mode.o md6_easy.o main.cpp
 
 md6_easy.o: md6_easy_stub.hpp md6_easy_stub.cpp md6_mode.o
 	$(CXX) $(CFLAGS) -o md6_easy.o md6_easy_stub.cpp -c
