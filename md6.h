@@ -132,7 +132,7 @@ typedef uint8_t md6_word;
 ** ordinary md6 usage.
 */
 
-#if 0
+#if 1
 extern int md6_default_r( int d,      /* returns default r for given d */ 
 			  int keylen  /* and keylen                    */
 			  );    
