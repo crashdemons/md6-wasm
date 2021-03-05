@@ -52,7 +52,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "md6.h"
+#include "md6.hpp"
 
 /* Useful macros: min and max */
 #ifndef min

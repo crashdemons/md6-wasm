@@ -130,8 +130,8 @@ extern int md6_full_hash( int d,                    /* hash bit length */
 #include <stdio.h> 
 #include <string.h>
 
-#include "md6.h"
-#include "md6_compress.c"
+#include "md6.hpp"
+#include "md6_compress.cpp"
 
 /* MD6 constants independent of mode of operation (from md6.h) */
 #define w md6_w     /* # bits in a word                   (64) */
