@@ -3262,13 +3262,13 @@ var md6 = {
      * @param {Number} digest_size the number of bits for the digest size (512 or 256). 512 is default.
      * @return {Object} the context object for this hashing session. should only be used to hash one data source.
      */
-    init: function(digest_size,variant){
+    init: function(digest_size_bits){
         if(typeof variant==="undefined") variant = this.variants.FNV_VARIANT_1A;
-	digest_size=512;
+        let digest_size_bytes = digest_size_bits/8;
         return {
-            digest_size : digest_size,
-	    variant: variant,
-            context: this.internal.init(variant)
+            digest_size_bits : digest_size_bits,
+            digest_size_bytes : digest_size_bytes,
+            context: this.internal.init(digest_size_bits) // param d: "hash bit length" (md6.h)
         };
     },
     
@@ -3279,7 +3279,8 @@ var md6 = {
      */
     update: function(contextObject, bytes){
         var inputBuffer = this.internal.bufferFromBytes(bytes);
-        this.internal.update(contextObject.context, inputBuffer, bytes.length);
+        let bitLength = bytes.length*8; //param databitlen: [data portion's] length in bits
+        this.internal.update(contextObject.context, inputBuffer, bitLength);
         this.internal.destroy_buffer(inputBuffer);
     },
     
