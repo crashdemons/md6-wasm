@@ -10,3 +10,7 @@ md6_state* md6_init_easy(int d){
 void md6_cleanup_easy(md6_state* ctx){
 	free(ctx);
 }
+
+int version(){
+    return 20210304;
+}
