@@ -305,8 +305,8 @@ MD6_EXTERN int md6_full_init( md6_state *st,        /* state to initialize */
 			  );
 
 MD6_EXTERN int md6_update( md6_state *st,             /* initialized state */
-		       unsigned char *data,            /* data portion */
-		       uint64_t databitlen       /* its length in bits */
+		       const unsigned char *data,            /* data portion */
+		       const uint64_t databitlen       /* its length in bits */
 		       );
 
 MD6_EXTERN int md6_final( md6_state *st,            /* initialized/updated */

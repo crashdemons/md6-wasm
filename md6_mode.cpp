@@ -335,7 +335,7 @@ void md6_reverse_little_endian( md6_word *x, int count )
 
 static
 void append_bits( unsigned char *dest, unsigned int destlen,
-		  unsigned char *src,  unsigned int srclen )
+		  const unsigned char *src,  const unsigned int srclen )
 /* Append bit string src to the end of bit string dest
 ** Input:
 **     dest         a bit string of destlen bits, starting in dest[0]
@@ -673,7 +673,7 @@ int md6_process( md6_state *st,
 
 
 int md6_update( md6_state *st, 
-		unsigned char *data, 
+		const unsigned char *data, 
 		uint64_t databitlen )
 /* Process input byte string data, updating state to reflect result
 ** Input:
