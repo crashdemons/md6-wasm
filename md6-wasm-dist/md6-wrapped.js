@@ -56,11 +56,6 @@ var md6 = {
             }
         }
     },
-    variants: {
-       FNV_VARIANT_0: 0,
-       FNV_VARIANT_1: 1,
-       FNV_VARIANT_1A: 2
-    },
 
 
     /**
@@ -78,7 +73,6 @@ var md6 = {
      * @return {Object} the context object for this hashing session. should only be used to hash one data source.
      */
     init: function(digest_size_bits){
-        if(typeof variant==="undefined") variant = this.variants.FNV_VARIANT_1A;
         let digest_size_bytes = digest_size_bits/8;
         return {
             digest_size_bits : digest_size_bits,
@@ -141,9 +135,9 @@ var md6 = {
      * @param {Number} digest_size the number of bits for the digest size (512 or 256). 512 is default.
      * @return {Uint8Array} an array of bytes representing the raw digest ("hash") value.
      */
-    digest: function (input, digest_size,variant) {
+    digest: function (input, digest_size_bits) {
         input = this.internal.inputToBytes(input);
-        var ctx = this.init(digest_size,variant);
+        var ctx = this.init(digest_size_bits);
         this.update(ctx,input);
         var bytes = this.final(ctx);
         this.cleanup(ctx);
@@ -156,8 +150,8 @@ var md6 = {
      * @param {Number} digest_size the number of bits for the digest size (512 or 256). 512 is default.
      * @return {String} a hexadecimal representation of the digest ("hash") bytes.
      */
-    digestHex: function (input, digest_size,variant) {
-        var bytes = this.digest(input,digest_size,variant);
+    digestHex: function (input, digest_size_bits) {
+        var bytes = this.digest(input,digest_size_bits);
         return this.internal.toHex(bytes);
     }
 };
