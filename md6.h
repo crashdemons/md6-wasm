@@ -64,6 +64,7 @@
 #ifndef MD6_H_INCLUDED
 #define MD6_H_INCLUDED
 
+#include "emscripten_stub.h"
 
 /* inttypes.h (which includes stdint.h)
 ** inttypes.h and stdint.h  are part of the normal environment 
@@ -290,12 +291,12 @@ typedef struct {
 ** and hex formats (st->hashval and st->hexhashval).
 */
 
-#if 0
-extern int md6_init( md6_state *st,             /* state to initialize */
+#if 1
+MD6_EXTERN int md6_init( md6_state *st,             /* state to initialize */
 		     int d                          /* hash bit length */
 		     );
 
-extern int md6_full_init( md6_state *st,        /* state to initialize */
+MD6_EXTERN int md6_full_init( md6_state *st,        /* state to initialize */
 			  int d,                    /* hash bit length */
 			  unsigned char *key,       /* OK to give NULL */
 			  int keylen,       /* (in bytes) OK to give 0 */
@@ -303,12 +304,12 @@ extern int md6_full_init( md6_state *st,        /* state to initialize */
 			  int r                    /* number of rounds */
 			  );
 
-extern int md6_update( md6_state *st,             /* initialized state */
+MD6_EXTERN int md6_update( md6_state *st,             /* initialized state */
 		       unsigned char *data,            /* data portion */
 		       uint64_t databitlen       /* its length in bits */
 		       );
 
-extern int md6_final( md6_state *st,            /* initialized/updated */
+MD6_EXTERN int md6_final( md6_state *st,            /* initialized/updated */
 		      unsigned char *hashval       /* output; NULL OK  */
 		      );
 #endif

@@ -397,7 +397,7 @@ void append_bits( unsigned char *dest, unsigned int destlen,
 ** 
 */
 
-static
+
 int md6_full_init( md6_state *st,       /* uninitialized state to use */
 		   int d,                          /* hash bit length */
 		   unsigned char *key,        /* key; OK to give NULL */
@@ -462,7 +462,6 @@ int md6_full_init( md6_state *st,       /* uninitialized state to use */
 **
 */
 
-static
 int md6_init( md6_state *st,
 	      int d 
 	      )
@@ -672,7 +671,7 @@ int md6_process( md6_state *st,
 /* Update -- incorporate data string into hash computation.
 */
 
-static
+
 int md6_update( md6_state *st, 
 		unsigned char *data, 
 		uint64_t databitlen )
@@ -798,7 +797,7 @@ void trim_hashval(md6_state *st)
 /* Final -- no more data; finish up and produce hash value.
 */
 
-static
+
 int md6_final( md6_state *st , unsigned char *hashval)
 /* Do final processing to produce md6 hash value
 ** Input:
