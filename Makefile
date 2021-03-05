@@ -1,6 +1,6 @@
 CXX=clang++
-CFLAGS=-I. -g -O0 -Wall
-#CFLAGS=-I. -O3 -Wall -lstdc++ -DNDEBUG
+#CFLAGS=-I. -g -O0 -Wall
+CFLAGS=-I. -O3 -Wall -lstdc++ -DNDEBUG
 
 #all: test
 
