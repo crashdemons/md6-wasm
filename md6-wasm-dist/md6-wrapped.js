@@ -2767,6 +2767,9 @@ var _malloc = Module["_malloc"] = createExportWrapper("malloc");
 var __Z16md6_cleanup_easyP9md6_state = Module["__Z16md6_cleanup_easyP9md6_state"] = createExportWrapper("_Z16md6_cleanup_easyP9md6_state");
 
 /** @type {function(...*):?} */
+var __Z7versionv = Module["__Z7versionv"] = createExportWrapper("_Z7versionv");
+
+/** @type {function(...*):?} */
 var _fflush = Module["_fflush"] = createExportWrapper("fflush");
 
 /** @type {function(...*):?} */
@@ -3346,11 +3349,11 @@ var md6 = {
 
 createMd6Module().then(async module => {
     md6.version= module.cwrap('version', 'number', []);
-    md6.internal.create_buffer= module.cwrap('create_buffer', 'number', ['number']);
-    md6.internal.destroy_buffer= module.cwrap('destroy_buffer', '', ['number']);
-    md6.internal.init= module.cwrap('md6_init', '', ['number']);
-    md6.internal.update= module.cwrap('md6_update', '', ['number','number','number']);
-    md6.internal.final= module.cwrap('md6_final', '', ['number','number']);
-    md6.internal.cleanup= module.cwrap('md6_cleanup', '', ['number']);
+    md6.internal.create_buffer= module.cwrap('malloc', 'number', ['number']);
+    md6.internal.destroy_buffer= module.cwrap('free', '', ['number']);
+    md6.internal.init= module.cwrap('md6_init_easy', '', ['number']);
+    md6.internal.update= module.cwrap('md6_update', 'number', ['number','number','number']);
+    md6.internal.final= module.cwrap('md6_final', 'number', ['number','number']);
+    md6.internal.cleanup= module.cwrap('md6_cleanup_easy', '', ['number']);
     md6.internal.module = module;
 });

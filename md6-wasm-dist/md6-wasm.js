@@ -2767,6 +2767,9 @@ var _malloc = Module["_malloc"] = createExportWrapper("malloc");
 var __Z16md6_cleanup_easyP9md6_state = Module["__Z16md6_cleanup_easyP9md6_state"] = createExportWrapper("_Z16md6_cleanup_easyP9md6_state");
 
 /** @type {function(...*):?} */
+var __Z7versionv = Module["__Z7versionv"] = createExportWrapper("_Z7versionv");
+
+/** @type {function(...*):?} */
 var _fflush = Module["_fflush"] = createExportWrapper("fflush");
 
 /** @type {function(...*):?} */
