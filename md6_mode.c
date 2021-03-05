@@ -131,6 +131,7 @@ extern int md6_full_hash( int d,                    /* hash bit length */
 #include <string.h>
 
 #include "md6.h"
+#include "md6_compress.c"
 
 /* MD6 constants independent of mode of operation (from md6.h) */
 #define w md6_w     /* # bits in a word                   (64) */
@@ -271,7 +272,17 @@ static const md6_word Q[120] =
 /* routines for dealing with byte ordering */
 
 #if 1
-int md6_detect_byte_order( void );
+const int md6_detect_byte_order( void )
+/* determine if underlying machine is little-endian or big-endian
+** set global variable md6_byte_order to reflect result
+** Written to work for any w.
+*/
+{ md6_word x = 1 | (((md6_word)2)<<(w-8));
+  unsigned char *cp = (unsigned char *)&x;
+  if ( *cp == 1 )        return 1;      /* little-endian */
+  else if ( *cp == 2 )   return 2;      /* big-endian    */
+  else                   return 0;      /* unknown       */
+}
 int md6_byte_order = md6_detect_byte_order();    
 /* md6_byte_order describes the endianness of the 
 ** underlying machine:
@@ -287,18 +298,6 @@ int md6_byte_order = md6_detect_byte_order();
 #define MD6_LITTLE_ENDIAN (md6_byte_order == 1)
 #define MD6_BIG_ENDIAN    (md6_byte_order == 2)
  
-int md6_detect_byte_order( void )
-/* determine if underlying machine is little-endian or big-endian
-** set global variable md6_byte_order to reflect result
-** Written to work for any w.
-*/
-{ md6_word x = 1 | (((md6_word)2)<<(w-8));
-  unsigned char *cp = (unsigned char *)&x;
-  if ( *cp == 1 )        md6_byte_order = 1;      /* little-endian */
-  else if ( *cp == 2 )   md6_byte_order = 2;      /* big-endian    */
-  else                   md6_byte_order = 0;      /* unknown       */
-  return md6_byte_order;
-}
 #endif
 
 static
