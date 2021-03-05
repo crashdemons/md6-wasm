@@ -36,7 +36,6 @@ async function debugBuffer(prefix,pBuffer,nBufLen){
 function clickHash(){
     var input = document.getElementById('input');
     var varSelect = document.getElementById('variant');
-    var digestSize = 512;
     var variant =  +(varSelect.value);
     var inputText = input.value;
     debugClear();
@@ -44,12 +43,12 @@ function clickHash(){
         debug("API not ready");
     }else{
         debug("API ready");
-        hashStringDebug(inputText,digestSize,variant);
+        hashStringDebug(inputText,variant);
     }
 }
-async function hashStringDebug(inputText,digestSize,variant){
+async function hashStringDebug(inputText,digestSize){
     debug("md6-wasm library version: "+md6.version());
-    debug("*Result = "+md6.digestHex(inputText,digestSize,variant));
+    debug("*Result = "+md6.digestHex(inputText,digestSize));
     debug("*Done");
 /*    debug("***Benchmarking...");
 
@@ -75,9 +74,9 @@ async function hashStringDebug(inputText,digestSize,variant){
     <body>
         <input type="text" id="input" value="test">
         <select id="variant">
-            <option value="0" selected="selected">md6-0 512</option>
-            <option value="1" selected="selected">md6-1 512</option>
-            <option value="2" selected="selected">md6-1a 512</option>
+            <option value="128" selected="selected">md6-128</option>
+            <option value="256" selected="selected">md6-256</option>
+            <option value="512" selected="selected">md6-512</option>
         </select>
         <button onclick="clickHash()">Calculate Hash</button>
         <hr>
