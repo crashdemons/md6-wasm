@@ -2743,31 +2743,31 @@ var asm = createWasm();
 var ___wasm_call_ctors = Module["___wasm_call_ctors"] = createExportWrapper("__wasm_call_ctors");
 
 /** @type {function(...*):?} */
-var __Z13md6_full_initP9md6_stateiPhiii = Module["__Z13md6_full_initP9md6_stateiPhiii"] = createExportWrapper("_Z13md6_full_initP9md6_stateiPhiii");
+var _md6_full_init = Module["_md6_full_init"] = createExportWrapper("md6_full_init");
 
 /** @type {function(...*):?} */
-var __Z8md6_initP9md6_statei = Module["__Z8md6_initP9md6_statei"] = createExportWrapper("_Z8md6_initP9md6_statei");
+var _md6_init = Module["_md6_init"] = createExportWrapper("md6_init");
 
 /** @type {function(...*):?} */
-var __Z10md6_updateP9md6_statePhy = Module["__Z10md6_updateP9md6_statePhy"] = createExportWrapper("_Z10md6_updateP9md6_statePhy");
+var _md6_update = Module["_md6_update"] = createExportWrapper("md6_update");
 
 /** @type {function(...*):?} */
-var __Z9md6_finalP9md6_statePh = Module["__Z9md6_finalP9md6_statePh"] = createExportWrapper("_Z9md6_finalP9md6_statePh");
+var _md6_final = Module["_md6_final"] = createExportWrapper("md6_final");
 
 /** @type {function(...*):?} */
 var _free = Module["_free"] = createExportWrapper("free");
 
 /** @type {function(...*):?} */
-var __Z13md6_init_easyi = Module["__Z13md6_init_easyi"] = createExportWrapper("_Z13md6_init_easyi");
+var _md6_init_easy = Module["_md6_init_easy"] = createExportWrapper("md6_init_easy");
 
 /** @type {function(...*):?} */
 var _malloc = Module["_malloc"] = createExportWrapper("malloc");
 
 /** @type {function(...*):?} */
-var __Z16md6_cleanup_easyP9md6_state = Module["__Z16md6_cleanup_easyP9md6_state"] = createExportWrapper("_Z16md6_cleanup_easyP9md6_state");
+var _md6_cleanup_easy = Module["_md6_cleanup_easy"] = createExportWrapper("md6_cleanup_easy");
 
 /** @type {function(...*):?} */
-var __Z7versionv = Module["__Z7versionv"] = createExportWrapper("_Z7versionv");
+var _version = Module["_version"] = createExportWrapper("version");
 
 /** @type {function(...*):?} */
 var _fflush = Module["_fflush"] = createExportWrapper("fflush");
