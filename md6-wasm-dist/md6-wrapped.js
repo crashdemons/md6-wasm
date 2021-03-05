@@ -2758,6 +2758,15 @@ var __Z9md6_finalP9md6_statePh = Module["__Z9md6_finalP9md6_statePh"] = createEx
 var _free = Module["_free"] = createExportWrapper("free");
 
 /** @type {function(...*):?} */
+var __Z13md6_init_easyi = Module["__Z13md6_init_easyi"] = createExportWrapper("_Z13md6_init_easyi");
+
+/** @type {function(...*):?} */
+var _malloc = Module["_malloc"] = createExportWrapper("malloc");
+
+/** @type {function(...*):?} */
+var __Z16md6_cleanup_easyP9md6_state = Module["__Z16md6_cleanup_easyP9md6_state"] = createExportWrapper("_Z16md6_cleanup_easyP9md6_state");
+
+/** @type {function(...*):?} */
 var _fflush = Module["_fflush"] = createExportWrapper("fflush");
 
 /** @type {function(...*):?} */
@@ -2796,9 +2805,6 @@ var _emscripten_stack_get_base = Module["_emscripten_stack_get_base"] = function
 var _emscripten_stack_get_end = Module["_emscripten_stack_get_end"] = function() {
   return (_emscripten_stack_get_end = Module["_emscripten_stack_get_end"] = Module["asm"]["emscripten_stack_get_end"]).apply(null, arguments);
 };
-
-/** @type {function(...*):?} */
-var _malloc = Module["_malloc"] = createExportWrapper("malloc");
 
 /** @type {function(...*):?} */
 var _sbrk = Module["_sbrk"] = createExportWrapper("sbrk");

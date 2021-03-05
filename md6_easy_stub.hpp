@@ -1,6 +1,6 @@
 
-#include "md6.h"
-
+#include "md6.hpp"
+#include <cstdlib>
 
 MD6_EXTERN md6_state* md6_init_easy(int d);
 
