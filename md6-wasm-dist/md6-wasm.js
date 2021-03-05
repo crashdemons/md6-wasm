@@ -1,10 +1,10 @@
 
-var createmd6Module = (function() {
+var createMd6Module = (function() {
   var _scriptDir = typeof document !== 'undefined' && document.currentScript ? document.currentScript.src : undefined;
   if (typeof __filename !== 'undefined') _scriptDir = _scriptDir || __filename;
   return (
-function(createmd6Module) {
-  createmd6Module = createmd6Module || {};
+function(createMd6Module) {
+  createMd6Module = createMd6Module || {};
 
 
 
@@ -21,7 +21,7 @@ function(createmd6Module) {
 // after the generated code, you will need to define   var Module = {};
 // before the code. Then that object will be used in the code, and you
 // can continue to use Module afterwards as well.
-var Module = typeof createmd6Module !== 'undefined' ? createmd6Module : {};
+var Module = typeof createMd6Module !== 'undefined' ? createMd6Module : {};
 
 // Set up the promise that indicates the Module is initialized
 var readyPromiseResolve, readyPromiseReject;
@@ -3191,13 +3191,13 @@ run();
 
 
 
-  return createmd6Module.ready
+  return createMd6Module.ready
 }
 );
 })();
 if (typeof exports === 'object' && typeof module === 'object')
-  module.exports = createmd6Module;
+  module.exports = createMd6Module;
 else if (typeof define === 'function' && define['amd'])
-  define([], function() { return createmd6Module; });
+  define([], function() { return createMd6Module; });
 else if (typeof exports === 'object')
-  exports["createmd6Module"] = createmd6Module;
+  exports["createMd6Module"] = createMd6Module;
